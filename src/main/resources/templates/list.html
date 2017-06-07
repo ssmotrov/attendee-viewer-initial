@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Attendee Viewer</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- Bootstrap -->
+	<link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+	<link href="/webjars/font-awesome/css/font-awesome.min.css" rel="stylesheet" media="screen" />
+	<link href="/css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+          <h3>Attendees</h3>
+          <table class="table table-hover">
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+            </tr>
+            <tr th:each="attendee : ${attendees}">
+              <td><a th:href="@{'/'+${attendee.uuid}}" th:text="${attendee.firstName}">First Name</a></td>
+              <td><a th:href="@{'/'+${attendee.uuid}}" th:text="${attendee.lastName}">Last Name</a></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    
+      <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+
+    </div>
+  </body>
+
+
+</html>

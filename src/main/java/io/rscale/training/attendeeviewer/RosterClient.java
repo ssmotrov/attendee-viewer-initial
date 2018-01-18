@@ -10,9 +10,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(name = "roster")
 public interface RosterClient {
 
+    @RequestMapping(method = RequestMethod.GET, value = "/people")
     PagedResources<Attendee> getAttendees(@RequestParam("page") int page);
 
-    @RequestMapping(method = RequestMethod.GET, value = "/people/{attendeeId}")
-    Attendee getAttendee(@PathVariable("attendeeId") String attendeeId);
+    @RequestMapping(method = RequestMethod.GET, value = "/people/{id}")
+    Attendee getAttendee(@PathVariable("id") String attendeeId);
     
 }

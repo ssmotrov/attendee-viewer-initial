@@ -13,6 +13,6 @@ public class AttendeeViewerApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(AttendeeViewerApplication.class, args);
 	}
-	
+
 
 }

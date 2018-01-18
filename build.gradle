@@ -14,7 +14,11 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 
-version = '0.0.1-SNAPSHOT'
+
+jar {
+	baseName = 'attendee'
+}
+
 sourceCompatibility = 1.8
 
 repositories {
@@ -27,6 +31,9 @@ ext {
 }
 
 dependencies {
+	compile('org.springframework.boot:spring-boot-starter-security')
+	compile('org.springframework.security.oauth:spring-security-oauth2')
+
 	compile('org.springframework.boot:spring-boot-starter-actuator')
 	compile('org.springframework.boot:spring-boot-starter-cloud-connectors')
 	compile('org.springframework.data:spring-data-rest-hal-browser')

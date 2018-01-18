@@ -1,0 +1,15 @@
+---
+applications:
+- name: attendee-viewer
+  memory: 1G
+  instances: 1
+  path: build/libs/attendee.jar
+  routes:
+  - route: attendee-stan.cfapps.io 
+  env:
+    JAVA_OPTS: -DCF_STARTUP_TIMEOUT=180 -DCLIENT_ID=44708bf5e98ddfa73162 -DCLIENT_SECRET=CLIENT_SECRET
+    SPRING_PROFILES_ACTIVE: cloud
+  services:
+    - config
+    - eureka
+    

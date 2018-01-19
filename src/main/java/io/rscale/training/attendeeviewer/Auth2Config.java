@@ -7,10 +7,10 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.web.bind.annotation.RestController;
 
-//@EnableOAuth2Sso
-//@Profile("cloud23")
-//@Configuration
-//@RestController
+@EnableOAuth2Sso
+@Profile("cloud")
+@Configuration
+@RestController
 public class Auth2Config extends WebSecurityConfigurerAdapter {
 
 	@Override
@@ -18,7 +18,7 @@ public class Auth2Config extends WebSecurityConfigurerAdapter {
 		http
 	      .antMatcher("/**")
 	      .authorizeRequests()
-	        .antMatchers("/", "/login**", "/webjars/**")
+	        .antMatchers("/login**", "/webjars/**")
 	        .permitAll()
 	      .anyRequest()
 	        .authenticated();

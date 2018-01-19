@@ -7,7 +7,7 @@ applications:
   routes:
   - route: attendee-stan.cfapps.io 
   env:
-    JAVA_OPTS: -DCF_STARTUP_TIMEOUT=180 -DCLIENT_ID=44708bf5e98ddfa73162 -DCLIENT_SECRET=CLIENT_SECRET
+    JAVA_OPTS: -DCF_STARTUP_TIMEOUT=180 -DCLIENT_ID=44708bf5e98ddfa73162 -DCLIENT_SECRET=2c1734c04bc5d0ff21e0d5bf8fc342511fdf8e76
     SPRING_PROFILES_ACTIVE: cloud
   services:
     - config

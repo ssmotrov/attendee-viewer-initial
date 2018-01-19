@@ -8,7 +8,11 @@ eureka:
 
 spring:
   profiles: cloud
-  
+
+feign:
+  hystrix:
+    enabled: true
+
 eureka:
   client:
     enabled: true  
